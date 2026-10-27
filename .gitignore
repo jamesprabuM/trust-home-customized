@@ -1,0 +1,17 @@
+# dependencies
+node_modules
+
+# Next.js build output
+.next
+.next-verify
+out
+
+# secrets: Razorpay keys live here, never commit them
+.env
+.env*.local
+
+# misc
+*.tsbuildinfo
+*.log
+.DS_Store
+.vercel
