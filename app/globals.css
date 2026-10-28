@@ -494,3 +494,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--yellow); outlin
   .donate-rate { grid-column: 3; }
 }
 @media (min-width: 641px) { .donate-qty { padding-left: 184px; } }
+.contact-card { display: block; color: inherit; transition: transform .2s ease, box-shadow .2s ease; }
+a.contact-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,.08); }
+.contact-action { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-family: var(--display); font-weight: 600; color: var(--purple); border-bottom: 1.5px solid currentColor; padding-bottom: 2px; }
+.contact-phones { display: grid; gap: 4px; justify-items: start; }
+.contact-phones .contact-action { margin-top: 8px; font-size: 18px; }
+.form-notice a { color: var(--purple); font-weight: 700; }
