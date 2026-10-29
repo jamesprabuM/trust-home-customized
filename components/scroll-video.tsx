@@ -2,6 +2,10 @@
 
 import { useEffect, useRef } from "react";
 
+// Both are visually lossless 60fps encodes of public/videos/main.MP4.
+const HERO_1080 = "/videos/hero-main.mp4";
+const HERO_4K = "/videos/hero-main-4k.mp4";
+
 export default function ScrollVideo({ poster }: { poster?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -29,7 +33,15 @@ export default function ScrollVideo({ poster }: { poster?: string }) {
       if (!frame) frame = requestAnimationFrame(updateScale);
     };
 
-    videoRef.current?.setAttribute("muted", "");
+    const video = videoRef.current;
+    if (video) {
+      video.setAttribute("muted", "");
+      // The hero is drawn up to 1.32x the screen, so pick 4K only where 1080p would be visibly upscaled.
+      // Phones always get 1080p: the 4K file is too heavy for mobile data.
+      const neededWidth = Math.max(window.innerWidth, window.innerHeight * (16 / 9)) * window.devicePixelRatio * 1.32;
+      const isPhone = window.innerWidth <= 640;
+      video.src = !isPhone && neededWidth > 2400 ? HERO_4K : HERO_1080;
+    }
     updateScale();
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleScroll);
@@ -53,9 +65,8 @@ export default function ScrollVideo({ poster }: { poster?: string }) {
         loop
         playsInline
         poster={poster}
-      >
-        <source src="/videos/hero.mp4" type="video/mp4" />
-      </video>
+        preload="auto"
+      />
       <div className="hero-static-fallback" style={poster ? { backgroundImage: `url(${poster})` } : undefined} />
     </section>
   );

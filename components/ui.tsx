@@ -72,13 +72,13 @@ export function AsteriskMark({ className = "" }: { className?: string }) {
   );
 }
 
-type InnerHeroProps = { eyebrow: string; title: React.ReactNode; text: string; image?: string; imageAlt?: string; cover?: string; coverAlt?: string; children?: React.ReactNode };
+type InnerHeroProps = { eyebrow: string; title: React.ReactNode; text: string; image?: string; imageAlt?: string; media?: React.ReactNode; cover?: string; coverAlt?: string; coverFull?: boolean; coverPosition?: string; coverPositionMobile?: string; children?: React.ReactNode };
 
-/** Page heading. `cover` is a wide banner photo shown full-width above the heading. */
-export function InnerHero({ eyebrow, title, text, image, imageAlt = "", cover, coverAlt = "", children }: InnerHeroProps) {
+/** Page heading. `cover` is a wide banner photo above the heading (`coverFull` makes it edge to edge; `coverPosition` / `coverPositionMobile` keep the people in frame when the sides are cropped); `image` or `media` fills the right column. */
+export function InnerHero({ eyebrow, title, text, image, imageAlt = "", media, cover, coverAlt = "", coverFull = false, coverPosition, coverPositionMobile, children }: InnerHeroProps) {
   return (
     <>
-    {cover && <div className="inner-cover"><img src={cover} alt={coverAlt} /></div>}
+    {cover && <div className={`inner-cover${coverFull ? " is-full" : ""}`}><img src={cover} alt={coverAlt} style={{ "--cover-pos": coverPosition, "--cover-pos-sm": coverPositionMobile } as React.CSSProperties} /></div>}
     <section className="inner-hero">
       <div className="section-wrap inner-hero-grid">
         <div>
@@ -88,24 +88,36 @@ export function InnerHero({ eyebrow, title, text, image, imageAlt = "", cover, c
           {children}
         </div>
         {image && <img className="inner-hero-photo" src={image} alt={imageAlt} />}
+        {media}
       </div>
     </section>
     </>
   );
 }
 
-export function ProgramCard({ program, href = "/programs", showGallery = false }: { program: Program; href?: string; showGallery?: boolean }) {
+/** Homepage shows the short `description` and links to the project; `full` (programs page) shows the whole write-up and photo strip. */
+export function ProgramCard({ program, full = false }: { program: Program; full?: boolean }) {
   return (
-    <article className={`program-card tone-${program.tone}${program.image ? "" : " no-image"}`}>
+    <article id={full ? program.slug : undefined} className={`program-card tone-${program.tone}${program.image ? "" : " no-image"}${full ? " is-full" : ""}`}>
       <div className="program-card-body">
         <span className="number-badge">{program.number}</span>
         <h3>{program.title}</h3>
-        <p>{program.description}</p>
+        {full ? (
+          <div className="program-details">
+            {program.body.map((paragraph) => <p key={paragraph.slice(0, 32)}>{paragraph}</p>)}
+            {program.points && (
+              <ul>{program.points.map((point) => <li key={point.text.slice(0, 32)}>{point.title && <strong>{point.title}: </strong>}{point.text}</li>)}</ul>
+            )}
+            {program.closing && <p>{program.closing}</p>}
+          </div>
+        ) : (
+          <p>{program.description}</p>
+        )}
         <span className="tag">{program.tag}</span>
-        <Link className="detail-link" href={href}>View details <ArrowRight size={16} /></Link>
+        {!full && <Link className="detail-link" href={`/programs#${program.slug}`}>View details <ArrowRight size={16} /></Link>}
       </div>
       {program.image && <img src={program.image} alt={`${program.title} at Synthika Trust`} loading="lazy" />}
-      {showGallery && program.gallery && program.gallery.length > 0 && (
+      {full && program.gallery && program.gallery.length > 0 && (
         <div className="program-strip">
           {program.gallery.map((src) => <img key={src} src={src} alt={`${program.title} at Synthika Trust`} loading="lazy" />)}
         </div>

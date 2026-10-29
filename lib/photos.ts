@@ -10,6 +10,7 @@ export const photos = {
   circleClass: `${dir}/circle-class.jpg`,
   coloring: `${dir}/coloring.jpg`,
   hoops: `${dir}/hoops.jpg`,
+  heroPoster: `${dir}/hero-poster.jpg`,
   phenylMaking: `${dir}/phenyl-making.jpg`,
   candleMaking: `${dir}/candle-making.jpg`,
   garden: `${dir}/garden.jpg`,
