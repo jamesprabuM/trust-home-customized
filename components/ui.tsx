@@ -97,8 +97,8 @@ export function InnerHero({ eyebrow, title, text, image, imageAlt = "", media, c
 
 /** Homepage shows the short `description` and links to the project; `full` (programs page) shows the whole write-up and photo strip. */
 export function ProgramCard({ program, full = false }: { program: Program; full?: boolean }) {
-  return (
-    <article id={full ? program.slug : undefined} className={`program-card tone-${program.tone}${program.image ? "" : " no-image"}${full ? " is-full" : ""}`}>
+  const main = (
+    <>
       <div className="program-card-body">
         <span className="number-badge">{program.number}</span>
         <h3>{program.title}</h3>
@@ -117,6 +117,12 @@ export function ProgramCard({ program, full = false }: { program: Program; full?
         {!full && <Link className="detail-link" href={`/programs#${program.slug}`}>View details <ArrowRight size={16} /></Link>}
       </div>
       {program.image && <img src={program.image} alt={`${program.title} at Synthika Trust`} loading="lazy" />}
+    </>
+  );
+  return (
+    <article id={full ? program.slug : undefined} className={`program-card tone-${program.tone}${program.image ? "" : " no-image"}${full ? " is-full" : ""}`}>
+      {/* On the full card the sticky photo is boxed in with the text so it can't slide over the gallery strip. */}
+      {full ? <div className="program-card-main">{main}</div> : main}
       {full && program.gallery && program.gallery.length > 0 && (
         <div className="program-strip">
           {program.gallery.map((src) => <img key={src} src={src} alt={`${program.title} at Synthika Trust`} loading="lazy" />)}

@@ -50,7 +50,7 @@ export const programs: Program[] = [
     body: ["At Synthika Trust, we provide vocational training to help children develop practical skills and explore opportunities for the future. Through activities such as phenyl making, dhoop stick making, gardening, and other hands-on work, children learn to work with confidence, develop creativity, and build independence. These initiatives encourage them to use their abilities meaningfully in everyday life and prepare them for greater participation in their communities."],
   },
   {
-    number: "05", slug: "free-food-distribution", title: "Free Food Distribution", tag: "110 packets daily", tone: "lavender", image: photos.foodHelp1, gallery: projects.food,
+    number: "05", slug: "free-food-distribution", title: "Free Food Distribution", tag: "110 food packets daily", tone: "lavender", image: photos.foodHelp1, gallery: projects.food,
     description: "110 free food packets every day for pregnant women and feeding mothers in government hospitals and Primary Health Centres.",
     body: [
       "Synthika Trust’s “Free Food Distribution” has been a beacon of hope and sustenance for the community. Our commitment to addressing food insecurity has resulted in significant achievements and positive impacts on the lives of those we serve.",
@@ -60,7 +60,7 @@ export const programs: Program[] = [
     closing: "Providing free food to individuals and communities in need brings immediate relief, improved nutrition, and enhanced well-being.",
   },
   {
-    number: "06", slug: "community-based-rehabilitation", title: "Community Based Rehabilitation (CBR)", tag: "Home visits", tone: "peach", image: sitePhotos.donate.awareness,
+    number: "06", slug: "community-based-rehabilitation", title: "Community Based Rehabilitation (CBR)", tag: "Home visits", tone: "peach", image: sitePhotos.donate.awareness, gallery: projects.cbr,
     description: "Home visits, groceries, and diapers for children with severe and multiple disabilities who need full-time care at home.",
     body: [
       "At Synthika Trust, we believe that every child deserves care, dignity, and support, regardless of the severity of their disability. Through our Community Rehabilitation Programme, we reach out to children with severe and multiple disabilities who are bedridden, unable to walk, or require full-time care and assistance at home.",
