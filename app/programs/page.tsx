@@ -15,7 +15,7 @@ export default function ProgramsPage() {
   return (
     <main className="programs-page" data-text-reveal>
       <SiteHeader />
-      <InnerHero cover={sitePhotos.covers.programs} coverAlt="Children learning at Synthika Trust" coverFull coverPosition="45% 50%" eyebrow="What we do" title={<>Nurturing Abilities, Building <Scribble>Independence</Scribble></>} text="At Synthika Trust, we support children with disabilities through residential care, special education, rehabilitation, and therapies. We also provide vocational training and sustainable agriculture activities to develop practical skills, encourage independence, and create opportunities for a more fulfilling life." />
+      <InnerHero cover={sitePhotos.covers.programs} coverAlt="A teacher showing fruit and vegetables to children around a classroom table" coverFull coverPosition="50% 32%" eyebrow="What we do" title={<>Nurturing Abilities, Building <Scribble>Independence</Scribble></>} text="At Synthika Trust, we support children with disabilities through residential care, special education, rehabilitation, and therapies. We also provide vocational training and sustainable agriculture activities to develop practical skills, encourage independence, and create opportunities for a more fulfilling life." />
       <section className="content-panel section-wrap">
         <div className="place-grid">
           {places.map((place) => (

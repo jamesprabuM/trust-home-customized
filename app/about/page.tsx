@@ -28,7 +28,7 @@ export default function AboutPage() {
       </InnerHero>
       <section className="content-panel section-wrap">
         <div className="story-grid">
-          <img className="story-photo" src={sitePhotos.about.origin} alt="Children sitting on the stairs at the Synthika Trust home" />
+          <img className="story-photo" src={sitePhotos.about.founder} alt="Mr. T. Selvaraj, Founder and Managing Trustee of Synthika Trust, at his desk" />
           <div>
             <Eyebrow>Our story</Eyebrow>
             <h2>Origin and History</h2>

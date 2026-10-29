@@ -15,6 +15,7 @@ export const sitePhotos = {
   },
   "about": {
     "origin": "/images/site/about/origin.jpg",
+    "founder": "/images/site/about/founder.jpg",
     "mission": "/images/site/about/mission.jpg",
     "vision": "/images/site/about/vision.jpg",
     "goals": "/images/site/about/goals.jpg",
@@ -86,6 +87,13 @@ export const sitePhotos = {
       "/images/site/projects/skilling/cb4b0587.jpg",
       "/images/site/projects/skilling/cb4b0622.jpg",
       "/images/site/projects/skilling/cb4b0629.jpg"
+    ],
+    "cbr": [
+      "/images/site/projects/cbr/home-visit-1.jpg",
+      "/images/site/projects/cbr/home-visit-2.jpg",
+      "/images/site/projects/cbr/home-visit-3.jpg",
+      "/images/site/projects/cbr/home-visit-4.jpg",
+      "/images/site/projects/cbr/home-visit-5.jpg"
     ]
   },
   "gallery": [
