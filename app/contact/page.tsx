@@ -33,7 +33,7 @@ export default function ContactPage() {
   return (
     <main>
       <SiteHeader />
-      <InnerHero eyebrow="Contact Synthika Trust" title={<>We’re here to <Scribble>hear</Scribble> from you</>} text="For questions about our work, services, visiting, volunteering, partnerships, or donations, please use the details below." cover={sitePhotos.covers.contact} coverAlt="A teacher with children in a classroom" />
+      <InnerHero eyebrow="Contact Synthika Trust" title={<>We’re here to <Scribble>hear</Scribble> from you</>} text="For questions about our work, services, visiting, volunteering, partnerships, or donations, please use the details below." cover={sitePhotos.covers.contact} coverAlt="A teacher with children in a classroom" coverFull coverPosition="30% 50%" />
       <section className="section-wrap contact-layout">
         <div className="contact-details">
           <a className="soft-card tone-mint contact-card" href={MAP_URL} target="_blank" rel="noopener noreferrer">

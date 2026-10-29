@@ -15,3 +15,7 @@ out
 *.log
 .DS_Store
 .vercel
+
+# original camera/source videos: too large for GitHub (100 MB limit) and not served; the site uses the encoded copies
+public/videos/main.MP4
+public/videos/video-output-*.MP4

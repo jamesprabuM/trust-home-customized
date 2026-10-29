@@ -10,34 +10,33 @@ import { photos } from "@/lib/photos";
 import { programs } from "@/lib/programs";
 
 const stats = [
-  { value: 2006, suffix: "", label: "Year the trust was founded" },
-  { value: 7, suffix: "", label: "Children we began with" },
-  { value: 110, suffix: "+", label: "Food packets shared daily" },
-  { value: 7, suffix: "", label: "Programs of care and learning" },
+  { value: 2006, suffix: "", label: "Year Synthika Trust was founded" },
+  { value: 7, suffix: "", label: "Children we began our journey with" },
+  { value: 100, suffix: "+", label: "Nutritious food packets distributed every day" },
+  { value: 7, suffix: "", label: "Programs supporting care and development" },
 ];
 
 const moments = [
-  { tone: "mint", title: "Classroom activities", src: photos.circleClass, alt: "A teacher leading a classroom activity with students seated in a circle" },
-  { tone: "lavender", title: "Outdoor play", src: photos.hoops, alt: "A smiling girl playing with hoops outdoors" },
-  { tone: "peach", title: "Learning with fruits and vegetables", src: photos.classroomFruits, alt: "A teacher using fruits and vegetables in a lesson" },
-  { tone: "mint", title: "Colouring practice", src: photos.coloring, alt: "A student colouring at a desk" },
-  { tone: "lavender", title: "Phenyl making", src: photos.phenylMaking, alt: "Students and teachers with bottles of phenyl they made" },
-  { tone: "peach", title: "Candle making", src: photos.candleMaking, alt: "Young adults waving with gloved hands after a candle-making session" },
-  { tone: "mint", title: "Sustainable gardening", src: sitePhotos.home.gardening, alt: "A young man watering brinjal plants in the garden" },
-  { tone: "lavender", title: "Life at Synthika Home", src: photos.stairs, alt: "Children sitting together on the stairs of the home" },
+  { tone: "mint", title: "Phenyl Making", src: photos.phenylMaking, alt: "Students and teachers with bottles of phenyl they made" },
+  { tone: "lavender", title: "Dhoop Stick Making", src: sitePhotos.projects.skilling[5], alt: "Young adults in gloves shaping dhoop sticks at a table" },
+  { tone: "peach", title: "Gardening Practice", src: sitePhotos.home.gardening, alt: "A young man watering brinjal plants in the garden" },
+  { tone: "mint", title: "Life at Synthika Home", src: photos.stairs, alt: "Children sitting together on the stairs of the home" },
+  { tone: "lavender", title: "Group Activities", src: photos.circleClass, alt: "A teacher leading a classroom activity with students seated in a circle" },
+  { tone: "peach", title: "Outdoor Games", src: photos.hoops, alt: "A smiling girl playing with hoops outdoors" },
+  { tone: "mint", title: "Learning with Real Life Objects", src: photos.classroomFruits, alt: "A teacher using fruits and vegetables in a lesson" },
+  { tone: "lavender", title: "Colouring & Writing Practice", src: photos.coloring, alt: "A student colouring at a desk" },
 ];
 
 const values = [
-  { icon: Sprout, tone: "mint", title: "Our vision", text: "An inclusive society where differently abled children are recognised, empowered, and given equal opportunities to reach their full potential." },
-  { icon: HeartHandshake, tone: "lavender", title: "Our mission", text: "Access to quality education, healthcare, skill development, counselling, therapy, and social inclusion for every child in our care." },
-  { icon: ShieldCheck, tone: "peach", title: "Our goals", text: "Helping children lead fulfilling lives, build independence, and become productive and respected members of society." },
+  { icon: Sprout, tone: "mint", title: "Our Vision", text: "To build an inclusive society where children with disabilities are empowered to reach their full potential and enjoy equal opportunities." },
+  { icon: HeartHandshake, tone: "lavender", title: "Our Mission", text: "To provide quality special education, healthcare, skill development, and opportunities for social inclusion, enabling every child to grow with confidence and independence." },
 ];
 
 const features = [
-  { title: "Residential care", text: "Food, shelter, and a safe home for intellectually disabled, hearing impaired, and visually impaired children." },
-  { title: "Trained teachers", text: "Special educators who adapt every lesson to each child’s pace, abilities, and interests." },
-  { title: "Therapy on site", text: "Speech therapy, occupational therapy, and physiotherapy as part of everyday life at the home." },
-  { title: "Skills for life", text: "Gardening, crafts, and vocational work that build confidence and self-reliance." },
+  { title: "Residential Care", text: "A safe and loving home with nutritious meals, comfortable shelter, personal care, and daily support for children with disabilities." },
+  { title: "Special Education", text: "Individualized learning guided by trained special educators, helping each child learn at their own pace and develop essential skills." },
+  { title: "Therapy and Rehabilitation", text: "Speech therapy, physiotherapy, and occupational therapy to support children’s communication, movement, coordination, and everyday activities." },
+  { title: "Life Skills and Vocational Training", text: "Hands-on activities such as gardening, phenyl making, dhoop stick making, and other vocational skills that encourage confidence and independence." },
 ];
 
 const ways = [
@@ -51,11 +50,11 @@ export default function HomePage() {
       <SiteHeader overlay />
 
       <section className="video-hero" aria-labelledby="hero-title">
-        <ScrollVideo poster={photos.hoops} />
+        <ScrollVideo poster={photos.heroPoster} />
         <div className="hero-shade" aria-hidden="true" />
         <div className="section-wrap video-hero-content">
-          <h1 id="hero-title">Support, dignity,<br />and <Scribble>possibility</Scribble></h1>
-          <p className="hero-lede">Since 2006, Synthika Trust has supported differently abled children with care, education, therapy, food, shelter, and a path towards independence.</p>
+          <h1 id="hero-title">Empowering Every Ability, Celebrating Every Individual.</h1>
+          <p className="hero-lede">Nurturing Hope, Building Independence, Creating a World of Inclusion.</p>
           <PillLink href="/donate" variant="white">Donate now</PillLink>
         </div>
       </section>
@@ -67,7 +66,7 @@ export default function HomePage() {
           <div className="about-head">
             <Eyebrow>About us</Eyebrow>
             <h2 className="lead-text">
-              A home where differently abled children are cared for, taught, and encouraged to grow into confident, independent lives
+              A home where children with disabilities receive loving care, special education, and support to grow into confident, independent individuals.
               <span className="icon-stack" aria-hidden="true">
                 <span className="green"><Heart size={18} fill="currentColor" /></span>
                 <span className="purple"><ShieldCheck size={18} /></span>
@@ -88,9 +87,9 @@ export default function HomePage() {
 
       <section className="photo-reel" aria-labelledby="photo-reel-title">
         <div className="section-wrap photo-reel-head">
-          <Eyebrow>A day at the home</Eyebrow>
-          <h2 id="photo-reel-title" className="display">Every day is a chance to <Scribble>grow</Scribble></h2>
-          <p className="body-text">Learning, play, and skill-building at Synthika Trust.</p>
+          <Eyebrow>A day at Synthika Home</Eyebrow>
+          <h2 id="photo-reel-title" className="display display-sm">Every day is a chance to <Scribble>grow</Scribble></h2>
+          <p className="body-text">“Learning, Playing, and Building Skills at Synthika Trust.”</p>
         </div>
         <div className="photo-reel-viewport">
           <div className="photo-reel-track">
@@ -104,7 +103,7 @@ export default function HomePage() {
         </div>
         <figure className="section-wrap family-photo">
           <img src={sitePhotos.home.family} alt="Children and staff of Synthika Trust gathered together for a group photo" loading="lazy" />
-          <figcaption>Our Synthika family</figcaption>
+          <figcaption><span aria-hidden="true">✦</span>Our Synthika Family<span aria-hidden="true">✦</span></figcaption>
         </figure>
       </section>
 
@@ -113,13 +112,13 @@ export default function HomePage() {
         <div className="section-wrap why-grid">
           <img className="why-photo" src={photos.stairs} alt="Children in Synthika Trust uniforms sitting on the stairs of the home" />
           <div>
-            <Eyebrow>Why Synthika</Eyebrow>
+            <Eyebrow>Why Synthika?</Eyebrow>
             <h2 className="display">Care that sees<br />the whole <Scribble>child</Scribble></h2>
-            <p className="body-text">We create a safe and dignified home where children receive individual attention, learn at their own pace, and grow in confidence every day.</p>
+            <p className="body-text">We create a safe and nurturing home where children receive individual attention, special education, and compassionate care, helping them learn at their own pace, develop essential life skills, and grow in confidence every day.</p>
             <div className="asterisk-divider"><AsteriskMark /></div>
             <div className="why-points">
-              <div><h3>Safe home</h3><p>Shelter, meals, and care in a secure, supportive place.</p></div>
-              <div><h3>Joyful learning</h3><p>Lessons, play, and therapy designed for each child.</p></div>
+              <div><h3>Safe and nurturing home</h3><p>A secure, loving environment with comfortable shelter, nutritious meals, and compassionate care.</p></div>
+              <div><h3>Joyful learning</h3><p>Individualized special education, play, and therapeutic activities tailored to each child’s abilities and needs.</p></div>
             </div>
             <PillLink href="/contact">Contact us</PillLink>
           </div>
@@ -129,13 +128,13 @@ export default function HomePage() {
       <section className="guided-section">
         <div className="section-wrap guided-grid">
           <div className="guided-copy">
-            <h2 className="display">Guided by care<br />and <Scribble>inclusion</Scribble></h2>
-            <p className="body-text">Everything we do is shaped by one belief: differently abled children deserve the same opportunities to learn, belong, and thrive.</p>
+            <h2 className="display">Guided by Care<br />and <Scribble>Inclusion</Scribble></h2>
+            <p className="body-text">Everything we do is rooted in one belief: every child with a disability deserves equal opportunities for special education, meaningful participation, and the chance to grow, belong, and thrive.</p>
           </div>
-          <div className="value-scroller">
+          <div className="value-cards">
             {values.map(({ icon: Icon, tone, title, text }) => (
               <article key={title} className={`soft-card value-card tone-${tone}`}>
-                <span className={`icon-circle big ${tone === "mint" ? "green" : tone === "lavender" ? "purple" : "yellow"}`}><Icon size={30} /></span>
+                <span className={`icon-circle big ${tone === "mint" ? "green" : "purple"}`}><Icon size={30} /></span>
                 <div><h3>{title}</h3><p>{text}</p></div>
               </article>
             ))}
@@ -147,7 +146,7 @@ export default function HomePage() {
         <AutoplayVideo src="/videos/building.mp4" poster={photos.building} label="The front of the Synthika Trust home, with colourful pillars and a mural reading “Every child is an artist”" />
         <div className="presentation-copy">
           <Eyebrow light>Life at the home</Eyebrow>
-          <h2 id="presentation-title">Discover our <Scribble kind="swoosh">learning space</Scribble></h2>
+          <h2 id="presentation-title" className="accent-title">A Glimpse into <em>Synthika Home</em></h2>
         </div>
       </section>
       <Marquee />
@@ -157,12 +156,12 @@ export default function HomePage() {
           <div className="section-head">
             <div>
               <Eyebrow>Our programs</Eyebrow>
-              <h2 className="display">Practical support for<br /><Scribble kind="swoosh">independent lives</Scribble></h2>
+              <h2 className="display">Practical Learning for<br /><Scribble kind="swoosh">Independent Living</Scribble></h2>
             </div>
             <PillLink href="/programs">View all programs</PillLink>
           </div>
           <div className="program-stack">
-            {programs.slice(0, 4).map((program) => <ProgramCard key={program.number} program={program} />)}
+            {programs.map((program) => <ProgramCard key={program.number} program={program} />)}
           </div>
         </div>
       </section>
@@ -172,9 +171,9 @@ export default function HomePage() {
         <div className="section-wrap features-grid">
           <div className="features-copy">
             <Eyebrow>What we provide</Eyebrow>
-            <h2 className="display">Care in every<br />little <Scribble>detail</Scribble></h2>
-            <p className="body-text">A closer look at what makes the trust a home, where every routine is designed to support dignity, learning, and independence.</p>
-            <PillLink href="/programs">Explore our work</PillLink>
+            <h2 className="display">Care in Every<br />Little <Scribble>Detail</Scribble></h2>
+            <p className="body-text">At Synthika Trust, every child receives the care, education, and support they need to learn, grow, and develop their abilities in a safe and nurturing environment.</p>
+            <PillLink href="/programs">Explore our major Programs</PillLink>
           </div>
           <div className="feature-cards">
             {features.map((feature) => (
@@ -192,7 +191,8 @@ export default function HomePage() {
           <div className="section-head">
             <div>
               <Eyebrow>Gallery</Eyebrow>
-              <h2 id="gallery-title" className="display">Moments that make<br />a <Scribble>home</Scribble></h2>
+              <h2 id="gallery-title" className="display">Our Journey in <Scribble>Pictures</Scribble></h2>
+              <p className="body-text">Discover the everyday moments of learning, play, creativity, and growth that make life at Synthika special.</p>
             </div>
             <PillLink href="/gallery" variant="white">Visit the gallery</PillLink>
           </div>
@@ -211,7 +211,7 @@ export default function HomePage() {
           <div className="section-head">
             <div>
               <Eyebrow>Get involved</Eyebrow>
-              <h2 className="display">Ways to stand<br />with our <Scribble>children</Scribble></h2>
+              <h2 className="display">Be a Part of our <Scribble>Journey</Scribble></h2>
             </div>
           </div>
           <div className="ways-grid">

@@ -20,7 +20,7 @@ function Brand() {
   return (
     <Link href="/" className="brand" aria-label="Synthika Trust home">
       <span className="brand-logo"><img src={photos.logo} alt="" /></span>
-      <span>Synthika Trust<small>Empowering the differently-abled</small></span>
+      <span>Synthika Trust<small>Empowering the Differently-Abled</small></span>
     </Link>
   );
 }
