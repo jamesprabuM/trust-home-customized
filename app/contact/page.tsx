@@ -1,12 +1,14 @@
 "use client";
 import { useState } from "react";
-import { ArrowRight, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { InnerHero, Scribble } from "@/components/ui";
 import { sitePhotos } from "@/lib/site-photos";
 
 const EMAIL = "info@synthikatrust.org";
 const ADDRESS = "Trichy main road, E. Vellanur (PO), Lalgudi (TK), Trichy (DT) – 621712";
+const INSTAGRAM_HANDLE = "synthika_trust";
+const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_HANDLE}/`;
 const MAP_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`Synthika Trust, ${ADDRESS}`)}`;
 const PHONES = [
   { label: "+91 99765 82866", tel: "+919976582866" },
@@ -49,6 +51,10 @@ export default function ContactPage() {
           <a className="soft-card tone-peach contact-card" href={`mailto:${EMAIL}`}>
             <Mail /><h2>Email us</h2><p>{EMAIL}</p>
             <span className="contact-action">Write an email <ArrowUpRight size={16} /></span>
+          </a>
+          <a className="soft-card tone-cream contact-card" href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+            <Instagram /><h2>Follow us</h2><p>@{INSTAGRAM_HANDLE}</p>
+            <span className="contact-action">Open Instagram <ArrowUpRight size={16} /></span>
           </a>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>
