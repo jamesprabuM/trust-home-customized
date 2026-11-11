@@ -9,7 +9,7 @@ Requirements: Node.js 20.9 or newer.
 npm install
 npm run dev
 ```
-Open http://localhost:3000.
+Open https://www.synthikatrust.org/.
 
 ## Routes
 - `/` — homepage, 3D hero, program slider
